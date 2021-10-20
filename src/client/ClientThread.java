@@ -1,3 +1,5 @@
+package client;
+
 /***
  * ClientThread
  * Example of a TCP server

@@ -1,3 +1,5 @@
+package server;
+
 import java.util.*;
 
 public class Discussions {
@@ -6,9 +8,10 @@ public class Discussions {
     Discussions(){}
 
     public ArrayList<String> getDiscuss(String groupName){return this.discuslist.get(groupName);}
+    public Hashtable<String, ArrayList<String>> getDiscussions(){return this.discuslist;}
 
 
-    public void putMessage(String discussOwner, String author, String message)
+    public void putMessage(String discussOwner, String group, String author, String message)
     {
         ArrayList<String> msg = new ArrayList<String>();
         if(discuslist.containsKey(discussOwner))
@@ -16,7 +19,8 @@ public class Discussions {
             msg = discuslist.get(discussOwner);
             discuslist.remove(discussOwner);
         }
-        msg.add(author + ":"  + message);
+        msg.add(author + ":"  + group + ":" + message);
         discuslist.put(discussOwner, msg);
-    }    
+    }
+
 }

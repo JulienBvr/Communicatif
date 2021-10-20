@@ -1,3 +1,5 @@
+package server;
+
 /***
  * EchoServer
  * Example of a TCP server
